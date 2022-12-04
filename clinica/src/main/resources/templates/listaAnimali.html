@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lista Libri</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<header class="container-fluid" th:insert="fragments/header.html"></header>
+
+	<div class="container">
+
+		<div class="card mt-2">
+			<div class="card-header">
+					<div class="card-head">
+					<a th:href="@{/animale/create}" class="btn btn-dark">Inserisci
+						Animale</a>
+				</div>
+			</div>
+			<div class="card-body">
+		
+				<ul class="list-group">
+					<li th:each="animale : ${animali}" th:value="${animale.id}"
+						class="list-group-item">
+						<div class="row">
+							<div class="col-2">
+								Nome: <span th:text="${animale.nome}"></span> 
+
+							</div>
+							
+							<div class="col-3">
+								Tipo Animale: <span th:text="${animale.tipo}"></span>
+
+							</div>
+							<div class="col">
+								<a th:href="@{/animale/update/}+${animale.id}"
+									class="btn btn-danger"> Modifica </a>
+							</div>
+							<div class="col">
+								<a th:href="@{/animale/delete/}+${animale.id}"
+									class="btn btn-danger"> Elimina </a>
+							</div>
+							<div class="col">
+								<a th:href="@{/animale/}+${animale.id}"
+									class="btn btn-info"> Info </a>
+							</div>
+
+						</div>
+					</li>
+				</ul>
+
+			</div>
+
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		crossorigin="anonymous"></script>
+	</body>
+</html>

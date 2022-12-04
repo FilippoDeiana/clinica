@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <header class="container-fluid" th:insert="fragments/header.html"></header>
+    
+    <div class="container">
+		<div class="card mt-2">
+			<form th:action="@{/animale/update/}+${animale.id}" method="POST">
+				<div class="card-head">
+				<div class="card-header">
+				<h3>Update Animale</h3>
+				</div>
+					
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col">
+							<label for="nome">Nome</label> <input type="text"
+								name="nome" class="form-control" id="nome" 
+								th:value="${animale.nome}">
+						</div>
+						<div class="col">
+							<label for="tipo">Tipo Animale</label> <input type="text"
+								name="tipo" class="form-control" id="tipo"
+								th:value="${animale.tipo}">
+						</div>
+						<div class="col">
+							<label for="padrone">Padrone</label> <input type="text"
+								name="padrone" class="form-control" id="padrone"
+								th:value="${animale.padrone}">
+						</div>
+						
+						
+					</div>
+
+				</div>
+				<div class="card-footer">
+					<button type="submit" class="btn btn-primary">Inserisci</button>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>

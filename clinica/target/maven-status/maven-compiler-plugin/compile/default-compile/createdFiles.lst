@@ -1,0 +1,9 @@
+com\corso\clinica\repositories\AnimaleRepository.class
+com\corso\clinica\entities\VisitaEntity.class
+com\corso\clinica\repositories\VisitaRepository.class
+com\corso\clinica\controllers\VisitaController.class
+com\corso\clinica\services\VisitaService.class
+com\corso\clinica\controllers\AnimaleController.class
+com\corso\clinica\services\AnimaleService.class
+com\corso\clinica\ClinicaApplication.class
+com\corso\clinica\entities\AnimaleEntity.class

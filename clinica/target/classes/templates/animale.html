@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap demo</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<header class="container-fluid" th:insert="fragments/header.html"></header>
+
+	<br>
+
+	<div class="container col-5">
+
+		<div class="card" th:object="${animale}">
+			<div class="card-header">
+				Nome: <span th:text="${animale.nome}"></span> Tipo Animale: <span
+					th:text="${animale.tipo}"></span> Padrone: <span
+					th:text="${animale.padrone}"></span>
+
+			</div>
+			<div class="card-body">
+
+				<ul th:each="visita : ${visite}" th:value="${visita.id}">
+					<li>
+						Data: <span th:text="${visita.data_inizio}"></span>
+						Tipo: <span th:text="${visita.tipo_visita}"></span>
+						<a th:href="@{/visita/delete/}+${visita.id}" class="btn btn-danger">
+					Elimina </a>
+					</li>
+			
+
+				</ul>
+
+
+
+
+			</div>
+			<div class="card-footer pe-5">
+				<a th:href="@{/visita/create/}+${animale.id}" class="btn btn-info">
+					Aggiungi Visita </a>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		crossorigin="anonymous"></script>
+</body>
+</html>
